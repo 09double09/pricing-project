@@ -1,0 +1,54 @@
+.DesignList {
+  height: 100vh;
+  background: linear-gradient(
+    248deg,
+    #cfd9df 5.55%,
+    #e2ebf0 47.95%,
+    #cfd9df 90.36%
+  );
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  section {
+    display: flex;
+    flex-direction: column;
+    background: #f3f3f3;
+    width: 70vw;
+    height: 90vh;
+    flex-shrink: 0;
+    .noDesign {
+      color: #898e92;
+      font-weight: 400;
+      font-size: 1.5rem;
+      text-align: center;
+      margin-top: 40vh;
+    }
+    footer {
+      display: flex;
+      margin-top: auto;
+      justify-self: flex-end;
+      .addBtn {
+        cursor: pointer;
+        font-weight: bolder;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background: #d9d9d9;
+        height: 5vh;
+        width: 35vw;
+        text-align: center;
+      }
+      .printBtn {
+        cursor: pointer;
+        font-weight: bolder;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background: rgba(139, 170, 192, 0.47);
+        height: 5vh;
+        width: 35vw;
+        text-align: center;
+      }
+    }
+  }
+}

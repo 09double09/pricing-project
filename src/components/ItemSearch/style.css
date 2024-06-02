@@ -1,0 +1,81 @@
+.itemSearch {
+  position: relative;
+  background: linear-gradient(248deg, #cfd9df 5.55%, #e2ebf0 47.95%, #cfd9df 90.36%);
+  height: auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.itemSearch img {
+  cursor: pointer;
+  margin-top: 12px;
+  margin-left: 16px;
+  margin-right: auto;
+  width: 32px;
+}
+.itemSearch header {
+  margin-top: 5vh;
+  margin-bottom: 15px;
+}
+.itemSearch header .title {
+  text-align: center;
+  color: rgba(0, 0, 0, 0.5);
+  font-family: Inter;
+  font-size: 32px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  margin-bottom: 30px;
+}
+.itemSearch header .search {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 400px;
+  height: 50px;
+  border-radius: 55px;
+  background: #d9d9d9;
+}
+.itemSearch header .search input {
+  border: none;
+  outline: none;
+  width: 200px;
+  margin-left: 16px;
+  background-color: transparent;
+}
+.itemSearch header .search .icon {
+  display: flex;
+  align-items: center;
+  margin-right: 16px;
+  margin-bottom: 10px;
+}
+.itemSearch header .search .icon img {
+  width: 24px;
+  height: 24px;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+.itemSearch main .items {
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 350px;
+  height: 50px;
+  border-radius: 10px;
+  background: #d9d9d9;
+  margin-bottom: 15px;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+       user-select: none;
+}
+.itemSearch main .items:hover {
+  transform: scale(1.2);
+}
+.itemSearch dialog {
+  border: none;
+  position: fixed;
+  top: 5vh;
+  height: 90vh;
+  width: 90vw;
+}/*# sourceMappingURL=style.css.map */
