@@ -1,0 +1,15 @@
+{
+  "files": {
+    "main.css": "/pricing-project/static/css/main.db23ba62.css",
+    "main.js": "/pricing-project/static/js/main.1291d5da.js",
+    "static/media/search.svg": "/pricing-project/static/media/search.604ebba7e10165dcacfa44847b1c5426.svg",
+    "index.html": "/pricing-project/index.html",
+    "static/media/back.svg": "/pricing-project/static/media/back.c9bfb7a8c944fd5ebd776d5e0a1167cd.svg",
+    "main.db23ba62.css.map": "/pricing-project/static/css/main.db23ba62.css.map",
+    "main.1291d5da.js.map": "/pricing-project/static/js/main.1291d5da.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.db23ba62.css",
+    "static/js/main.1291d5da.js"
+  ]
+}
