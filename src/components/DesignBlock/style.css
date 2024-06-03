@@ -1,0 +1,43 @@
+.designBlock {
+  height: 10%;
+  border: 1px solid rgba(0, 0, 0, 0.5);
+  border-top: none;
+  border-collapse: collapse;
+  display: flex;
+}
+.designBlock:nth-child(1) {
+  border-top: 1px solid rgba(0, 0, 0, 0.5);
+}
+.designBlock .designName {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 80%;
+}
+.designBlock .alterArea {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  width: 20%;
+}
+.designBlock .alterArea .alterDesign {
+  font-weight: bolder;
+  width: 100%;
+  background-color: #d9d9d9;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 50%;
+}
+.designBlock .alterArea a {
+  font-weight: bolder;
+  width: 100%;
+  background: #cfd9df;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 50%;
+}/*# sourceMappingURL=style.css.map */

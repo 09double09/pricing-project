@@ -1,0 +1,46 @@
+.designBlock {
+  height: 10%;
+  border: 1px solid rgba(0, 0, 0, 0.5);
+  border-top: none;
+  &:nth-child(1) {
+    border-top: 1px solid rgba(0, 0, 0, 0.5);
+  }
+  border-collapse: collapse;
+  display: flex;
+  .designName {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 80%;
+  }
+  .alterArea {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    width: 20%;
+    .alterDesign {
+      font-weight: bolder;
+      width: 100%;
+      background-color: #d9d9d9;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 50%;
+    }
+    a {
+      font-weight: bolder;
+      width: 100%;
+      background: #cfd9df;
+
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 50%;
+      .addItem {
+      }
+    }
+  }
+}

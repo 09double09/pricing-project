@@ -1,105 +1,3 @@
-class table {
-  constructor(texture, length, breadth, isSeal, isTrucking, span) {
-    this.texture = texture;
-    this.length = length;
-    this.breadth = breadth;
-    this.isSeal = isSeal;
-    this.isTrucking = isTrucking;
-    this.span = span;
-  }
-  costPrice() {
-    if (this.texture === "iron") {
-      if (!this.isSeal && !this.isTrucking) {
-        if (this.breadth === 700) {
-          return (this.length / 300) * 1700;
-        }
-        if (this.breadth === 750) {
-          return (this.length / 300) * 1900;
-        }
-        if (this.breadth === 900) {
-          return (this.length / 300) * 2500;
-        }
-        if (this.breadth === 1000) {
-          return;
-        }
-      }
-      if (this.isSeal && this.isTrucking) {
-        if (this.breadth === 700) {
-          return;
-        }
-        if (this.breadth === 750) {
-          return (this.length / 300) * 2280;
-        }
-        if (this.breadth === 900) {
-          return;
-        }
-        if (this.breadth === 1000) {
-          return;
-        }
-      }
-      if (!this.isSeal && this.isTrucking) {
-        if (this.breadth === 700) {
-          return;
-        }
-        if (this.breadth === 750) {
-          return (this.length / 300) * 2000;
-        }
-        if (this.breadth === 900) {
-          return (this.length / 300) * 2700;
-        }
-        if (this.breadth === 1000) {
-          return (this.length / 300) * 2800;
-        }
-      }
-    }
-  }
-  sellPrice() {
-    if (this.texture === "iron") {
-      if (!this.isSeal && !this.isTrucking) {
-        if (this.breadth === 700) {
-          return 2300;
-        }
-        if (this.breadth === 750) {
-          return 2600;
-        }
-        if (this.breadth === 900) {
-          return 3400;
-        }
-        if (this.breadth === 1000) {
-          return;
-        }
-      }
-      if (this.isSeal && this.isTrucking) {
-        if (this.breadth === 700) {
-          return;
-        }
-        if (this.breadth === 750) {
-          return 3100;
-        }
-        if (this.breadth === 900) {
-          return;
-        }
-        if (this.breadth === 1000) {
-          return;
-        }
-      }
-      if (!this.isSeal && this.isTrucking) {
-        if (this.breadth === 700) {
-          return;
-        }
-        if (this.breadth === 750) {
-          return 2700;
-        }
-        if (this.breadth === 900) {
-          return 3600;
-        }
-        if (this.breadth === 1000) {
-          return 3800;
-        }
-      }
-    }
-  }
-}
 class seal {
   constructor(texture, category, length) {
     this.texture = texture;
@@ -279,36 +177,16 @@ class palletRack {
     }
   }
 }
-class notCountableStuff {
-  constructor(name, price) {
+class table {}
+class stuff {
+  constructor(name, costPrice, sellPrice) {
     this.name = name;
-    this.price = price;
+    this.costPrice = costPrice;
+    this.sellPrice = sellPrice;
   }
 }
+
 let allItem = {
-  鋼製懸吊桌: {
-    texture: {
-      無封板無線槽: [
-        { 700: { costPrice: 1700, sellPrice: 2300 } },
-        { 750: { costPrice: 1900, sellPrice: 2600 } },
-        { 900: { costPrice: 2500, sellPrice: 3400 } },
-        { 1000: { costPrice: 0, sellPrice: 0 } },
-      ],
-      無封板有線槽: [
-        { 700: { costPrice: 0, sellPrice: 0 } },
-        { 750: { costPrice: 2000, sellPrice: 2700 } },
-        { 900: { costPrice: 2700, sellPrice: 3600 } },
-        { 1000: { costPrice: 2800, sellPrice: 3800 } },
-      ],
-      有封板有線槽: [
-        { 700: { costPrice: 0, sellPrice: 0 } },
-        { 750: { costPrice: 2280, sellPrice: 3100 } },
-        { 900: { costPrice: 0, sellPrice: 0 } },
-        { 1000: { costPrice: 0, sellPrice: 0 } },
-      ],
-    },
-    Countable: true,
-  },
   封板: {
     texture: {
       鋼製: [
@@ -324,7 +202,7 @@ let allItem = {
         { 美背: { costPrice: 40, sellPrice: 55 } },
       ],
     },
-    Countable: true,
+    countable: null,
   },
   立柱: {
     texture: {
@@ -335,36 +213,34 @@ let allItem = {
         { 2400: { costPrice: 1700, sellPrice: 2300 } },
       ],
     },
-    Countable: false,
+    countable: false,
   },
   主柱連桿: {
-    texture: [
-      {
-        連桿: {
-          costPrice: 5,
-          sellPrice: 7,
-        },
+    texture: {
+      連桿: {
+        costPrice: 5,
+        sellPrice: 7,
       },
-    ],
-    Countable: true,
+    },
+    countable: true,
   },
   藥品層架: {
-    texture: [
-      { 鋼製: { costPrice: 10, sellPrice: 14 } },
-      { sus: { costPrice: 15, sellPrice: 20 } },
-    ],
-    Countable: true,
+    texture: {
+      鋼製: { costPrice: 10, sellPrice: 14 },
+      sus: { costPrice: 15, sellPrice: 20 },
+    },
+    countable: true,
   },
   線槽: {
-    texture: [{ 鋼製: { costPrice: 8, sellPrice: 10 } }],
-    Countable: true,
+    texture: { 鋼製: { costPrice: 8, sellPrice: 10 } },
+    countable: true,
   },
   拖板架: {
-    texture: [
-      { 鋼製: { costPrice: 320, sellPrice: 430 } },
-      { sus: { costPrice: 600, sellPrice: 800 } },
-    ],
-    Countable: false,
+    texture: {
+      鋼製: [{ 鋼製拖板架: { costPrice: 320, sellPrice: 430 } }],
+      sus: [{ sus製拖板架: { costPrice: 600, sellPrice: 800 } }],
+    },
+    countable: false,
   },
   壁櫃: {
     texture: {
@@ -386,7 +262,7 @@ let allItem = {
         { 四門1500: { costPrice: 14700, sellPrice: 19500 } },
       ],
     },
-    Countable: false,
+    countable: false,
   },
   玻璃壁櫃: {
     texture: {
@@ -399,7 +275,7 @@ let allItem = {
         { 四玻璃1500: { costPrice: 9500, sellPrice: 12600 } },
       ],
       sus: [
-        { 雙玻璃750: { costPrice: 800, sellPrice: 10600 } },
+        { 雙玻璃750: { costPrice: 8000, sellPrice: 10600 } },
         { 雙玻璃900: { costPrice: 9000, sellPrice: 12000 } },
         { 雙玻璃1125: { costPrice: 11450, sellPrice: 15200 } },
         { 雙玻璃100: { costPrice: 12500, sellPrice: 16600 } },
@@ -407,7 +283,7 @@ let allItem = {
         { 四玻璃1500: { costPrice: 14700, sellPrice: 19500 } },
       ],
     },
-    Countable: false,
+    countable: false,
   },
   玻璃加框壁櫃: {
     texture: {
@@ -429,7 +305,7 @@ let allItem = {
         { 四門板1500: { costPrice: 16000, sellPrice: 21300 } },
       ],
     },
-    Countable: false,
+    countable: false,
   },
   懸吊下櫃三或四抽櫃: {
     texture: {
@@ -448,7 +324,7 @@ let allItem = {
         { 900: { costPrice: 10920, sellPrice: 14550 } },
       ],
     },
-    Countable: false,
+    countable: false,
   },
   懸吊下櫃三或四抽加連動鎖: {
     texture: {
@@ -467,7 +343,7 @@ let allItem = {
         { 900: { costPrice: 11700, sellPrice: 15600 } },
       ],
     },
-    Countable: false,
+    countable: false,
   },
   懸吊下櫃單抽封板: {
     texture: {
@@ -479,7 +355,7 @@ let allItem = {
         { 900: { costPrice: 4550, sellPrice: 6100 } },
       ],
     },
-    Countable: false,
+    countable: false,
   },
   懸吊下櫃單抽單門: {
     texture: {
@@ -492,7 +368,7 @@ let allItem = {
         { 450: { costPrice: 5400, sellPrice: 7200 } },
       ],
     },
-    Countable: false,
+    countable: false,
   },
   懸吊下櫃單抽單門加鎖: {
     texture: {
@@ -505,7 +381,7 @@ let allItem = {
         { 450: { costPrice: 5500, sellPrice: 7400 } },
       ],
     },
-    Countable: false,
+    countable: false,
   },
   懸吊下櫃單抽雙門: {
     texture: {
@@ -515,7 +391,7 @@ let allItem = {
         { 900: { costPrice: 7800, sellPrice: 10400 } },
       ],
     },
-    Countable: false,
+    countable: false,
   },
   懸吊下櫃雙抽雙門: {
     texture: {
@@ -525,7 +401,7 @@ let allItem = {
         { 900: { costPrice: 8700, sellPrice: 11600 } },
       ],
     },
-    Countable: false,
+    countable: false,
   },
   懸吊下櫃單抽雙門內縮: {
     texture: {
@@ -535,7 +411,7 @@ let allItem = {
         { 四門1500: { costPrice: 8450, sellPrice: 11300 } },
       ],
     },
-    Countable: false,
+    countable: false,
   },
   懸吊下跪雙抽雙門內縮: {
     texture: {
@@ -545,7 +421,7 @@ let allItem = {
         { 四門1500: { costPrice: 9400, sellPrice: 12500 } },
       ],
     },
-    Countable: false,
+    countable: false,
   },
   懸吊下櫃單門: {
     texture: {
@@ -558,7 +434,7 @@ let allItem = {
         { 450: { costPrice: 3800, sellPrice: 5100 } },
       ],
     },
-    Countable: false,
+    countable: false,
   },
   懸吊下櫃雙門: {
     texture: {
@@ -573,7 +449,7 @@ let allItem = {
         { 900: { costPrice: 5700, sellPrice: 7600 } },
       ],
     },
-    Countable: false,
+    countable: false,
   },
   懸吊下櫃水槽: {
     texture: {
@@ -590,37 +466,60 @@ let allItem = {
         { 雙門1500: { costPrice: 11100, sellPrice: 14800 } },
       ],
     },
-    Countable: false,
+    countable: false,
   },
   懸吊下櫃PP製: {
-    texture: [
-      {
-        無抽屜單門: {
-          costPrice: 140,
-          sellPrice: 190,
-        },
-      },
-      { 無抽屜雙門: { costPrice: 140, sellPrice: 190 } },
-      { 一抽屜單門: { costPrice: 160, sellPrice: 215 } },
-      { 一抽屜雙門: { costPrice: 160, sellPrice: 215 } },
-      { 三抽屜: { costPrice: 175, sellPrice: 235 } },
-    ],
-    Countable: true,
+    texture: {
+      PP製: [
+        { 無抽屜單門: { costPrice: 140, sellPrice: 190 } },
+        { 無抽屜雙門: { costPrice: 140, sellPrice: 190 } },
+        { 一抽屜單門: { costPrice: 160, sellPrice: 215 } },
+        { 一抽屜雙門: { costPrice: 160, sellPrice: 215 } },
+        { 三抽屜: { costPrice: 175, sellPrice: 235 } },
+      ],
+    },
+    countable: null,
   },
   落地櫃PP製: {
-    texture: [
-      { 無抽屜單門: { costPrice: 175, sellPrice: 235 } },
-      { 無抽屜雙門: { costPrice: 175, sellPrice: 235 } },
-      { 一抽屜單門: { costPrice: 175, sellPrice: 235 } },
-      { 一抽屜雙門: { costPrice: 175, sellPrice: 235 } },
-      { 三抽屜: { costPrice: 175, sellPrice: 235 } },
-      { 雙抽雙門: { costPrice: 175, sellPrice: 235 } },
-      { 雙抽雙門內縮: { costPrice: 175, sellPrice: 235 } },
-      { 無抽屜無門無封板: { costPrice: 175, sellPrice: 235 } },
-      { 落地水槽: { costPrice: 175, sellPrice: 235 } },
-    ],
-    Countable: true,
+    texture: {
+      PP製: [
+        { 無抽屜單門: { costPrice: 280, sellPrice: 375 } },
+        { 無抽屜雙門: { costPrice: 280, sellPrice: 375 } },
+        { 一抽屜單門: { costPrice: 315, sellPrice: 420 } },
+        { 一抽屜雙門: { costPrice: 315, sellPrice: 420 } },
+        { 三抽屜: { costPrice: 330, sellPrice: 440 } },
+        { 雙抽雙門: { costPrice: 300, sellPrice: 400 } },
+        { 雙抽雙門內縮: { costPrice: 390, sellPrice: 520 } },
+        { 無抽屜無門無封板: { costPrice: 125, sellPrice: 170 } },
+        { 落地水槽: { costPrice: 235, sellPrice: 320 } },
+      ],
+    },
+    countable: null,
   },
 };
-
-export { allItem };
+let designs = {
+  鋼製懸吊桌: {
+    texture: {
+      無封板無線槽: [
+        { 700: { costPrice: 1700, sellPrice: 2300 } },
+        { 750: { costPrice: 1900, sellPrice: 2600 } },
+        { 900: { costPrice: 2500, sellPrice: 3400 } },
+        { 1000: { costPrice: 0, sellPrice: 0 } },
+      ],
+      無封板有線槽: [
+        { 700: { costPrice: 0, sellPrice: 0 } },
+        { 750: { costPrice: 2000, sellPrice: 2700 } },
+        { 900: { costPrice: 2700, sellPrice: 3600 } },
+        { 1000: { costPrice: 2800, sellPrice: 3800 } },
+      ],
+      有封板有線槽: [
+        { 700: { costPrice: 0, sellPrice: 0 } },
+        { 750: { costPrice: 2280, sellPrice: 3100 } },
+        { 900: { costPrice: 0, sellPrice: 0 } },
+        { 1000: { costPrice: 0, sellPrice: 0 } },
+      ],
+    },
+    countable: null,
+  },
+};
+export { allItem, stuff, designs };

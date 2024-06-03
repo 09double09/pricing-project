@@ -1,0 +1,209 @@
+@charset "UTF-8";
+.settingList {
+  height: 100%;
+  align-self: flex-start;
+  display: flex;
+  flex-direction: column;
+}
+.settingList .textures {
+  display: flex;
+  margin-top: 3vh;
+}
+.settingList .textures .texture {
+  -webkit-user-select: none;
+  -moz-user-select: none;
+       user-select: none;
+  cursor: pointer;
+  margin-left: 3vw;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 150px;
+  height: 50px;
+  flex-shrink: 0;
+  background: #cfd9df;
+  box-shadow: 0px 10px 10px 0px rgba(0, 0, 0, 0.25);
+}
+.settingList .textures .texture.selected1 {
+  background: #9aacb7;
+}
+.settingList .options {
+  width: 60vw;
+  display: flex;
+  flex-wrap: wrap;
+}
+.settingList .options .option {
+  -webkit-user-select: none;
+  -moz-user-select: none;
+       user-select: none;
+  margin-top: 3vh;
+  cursor: pointer;
+  margin-left: 3vw;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  width: 150px;
+  height: 40px;
+  flex-shrink: 0;
+  background: #cfd9df;
+  box-shadow: 0px 10px 10px 0px rgba(0, 0, 0, 0.25);
+}
+.settingList .options .option.selected2 {
+  background: #9aacb7;
+}
+.settingList .inputArea {
+  margin-top: 3vh;
+  margin-left: 3vw;
+}
+.settingList .inputArea .inputBlock {
+  width: 200px;
+  display: flex;
+  align-items: center;
+  background: #cfd9df;
+  /* 隐藏 Firefox 上的增减按钮 */
+}
+.settingList .inputArea .inputBlock .length {
+  margin-left: 1vw;
+  height: 40px;
+  width: 200px;
+  outline: none;
+  border: none;
+  background-color: transparent;
+}
+.settingList .inputArea .inputBlock input[type=number]::-webkit-inner-spin-button,
+.settingList .inputArea .inputBlock input[type=number]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+.settingList .inputArea .inputBlock input[type=number] {
+  -moz-appearance: textfield;
+}
+.settingList .submitBtn {
+  cursor: pointer;
+  margin-top: auto;
+  margin-bottom: 3vh;
+  align-self: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: #d9d9d9;
+  width: 60px;
+  height: 40px;
+}
+.settingList .submitBtn:hover {
+  transform: scale(1.1);
+}
+
+.designInformation {
+  height: 60vh;
+  width: 60vw;
+  margin-left: 20vw;
+  margin-top: 30vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.designInformation .title {
+  margin-top: 3vh;
+  color: #000;
+  text-align: center;
+  font-family: Inter;
+  font-size: 36px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+}
+.designInformation .textures {
+  display: flex;
+  align-self: flex-start;
+  margin-top: 3vh;
+}
+.designInformation .textures .texture {
+  -webkit-user-select: none;
+  -moz-user-select: none;
+       user-select: none;
+  cursor: pointer;
+  margin-left: 3vw;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 150px;
+  height: 50px;
+  flex-shrink: 0;
+  background: #cfd9df;
+  box-shadow: 0px 10px 10px 0px rgba(0, 0, 0, 0.25);
+}
+.designInformation .textures .texture.selected1 {
+  background: #9aacb7;
+}
+.designInformation .options {
+  width: 60vw;
+  display: flex;
+  flex-wrap: wrap;
+}
+.designInformation .options .option {
+  -webkit-user-select: none;
+  -moz-user-select: none;
+       user-select: none;
+  margin-top: 6vh;
+  cursor: pointer;
+  margin-left: 3vw;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  width: 150px;
+  height: 40px;
+  flex-shrink: 0;
+  background: #cfd9df;
+  box-shadow: 0px 10px 10px 0px rgba(0, 0, 0, 0.25);
+}
+.designInformation .options .option.selected2 {
+  background: #9aacb7;
+}
+.designInformation .inputArea {
+  margin-top: 6vh;
+  margin-left: 3vw;
+  align-self: flex-start;
+}
+.designInformation .inputArea .inputBlock {
+  width: 200px;
+  display: flex;
+  align-items: center;
+  background: #cfd9df;
+  /* 隐藏 Firefox 上的增减按钮 */
+}
+.designInformation .inputArea .inputBlock .length {
+  margin-left: 1vw;
+  height: 40px;
+  width: 200px;
+  outline: none;
+  border: none;
+  background-color: transparent;
+}
+.designInformation .inputArea .inputBlock input[type=number]::-webkit-inner-spin-button,
+.designInformation .inputArea .inputBlock input[type=number]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+.designInformation .inputArea .inputBlock input[type=number] {
+  -moz-appearance: textfield;
+}
+.designInformation .submitBtn {
+  cursor: pointer;
+  margin-top: auto;
+  margin-bottom: 25vh;
+  align-self: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: #d9d9d9;
+  width: 120px;
+  padding-top: 1vh;
+  padding-bottom: 1vh;
+}
+.designInformation .submitBtn:hover {
+  transform: scale(1.1);
+}/*# sourceMappingURL=style.css.map */
